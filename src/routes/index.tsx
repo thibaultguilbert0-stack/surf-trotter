@@ -86,7 +86,7 @@ function Home() {
       <section className="mx-auto max-w-7xl px-4 py-10">
         <div className="flex items-end justify-between"><h2 className="text-4xl">La sélection du moment</h2><Link to="/location" className="font-semibold text-primary">Tout le catalogue →</Link></div>
         <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {[products[1], products[2], products[6], products[8]].map((p) => <ProductCard key={p.id} p={p} />)}
+          {products.filter((p) => ["malibu-9", "evo-7", "combi-43", "body-42"].includes(p.id)).map((p) => <ProductCard key={p.id} p={p} />)}
         </div>
       </section>
 

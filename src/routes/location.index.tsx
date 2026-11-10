@@ -4,12 +4,12 @@ import { products, shops, spots, type Category } from "@/lib/data";
 import { ProductCard, field } from "@/components/ProductCard";
 import { PageHero } from "@/components/SiteChrome";
 
-type S = { spot?: string; level?: string };
+type S = { spot?: string | undefined; level?: string | undefined };
 
 export const Route = createFileRoute("/location/")({
   validateSearch: (s: Record<string, unknown>): S => ({
-    spot: typeof s.spot === "string" ? s.spot : undefined,
-    level: typeof s.level === "string" ? s.level : undefined,
+    spot: typeof s["spot"] === "string" ? s["spot"] : undefined,
+    level: typeof s["level"] === "string" ? s["level"] : undefined,
   }),
   head: () => ({
     meta: [
@@ -44,7 +44,7 @@ function Catalog() {
     if (p.pricePerDay > max) return false;
     if (weight) {
       const m = p.weight.match(/(\d+)\s*–\s*(\d+)/);
-      if (m && (+weight < +m[1] || +weight > +m[2])) return false;
+      if (m && (+weight < +m[1]! || +weight > +m[2]!)) return false;
     }
     return true;
   }), [spot, level, cat, type, max, weight]);
