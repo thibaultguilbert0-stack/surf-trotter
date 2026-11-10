@@ -10,33 +10,115 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AProposRouteImport } from './routes/a-propos'
+import { Route as ConseilsRouteImport } from './routes/conseils'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as OuLouerRouteImport } from './routes/ou-louer'
+import { Route as LocationIndexRouteImport } from './routes/location.index'
+import { Route as LocationIdRouteImport } from './routes/location.$id'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AProposRoute = AProposRouteImport.update({
+  id: '/a-propos',
+  path: '/a-propos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ConseilsRoute = ConseilsRouteImport.update({
+  id: '/conseils',
+  path: '/conseils',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OuLouerRoute = OuLouerRouteImport.update({
+  id: '/ou-louer',
+  path: '/ou-louer',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LocationIndexRoute = LocationIndexRouteImport.update({
+  id: '/location/',
+  path: '/location/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LocationIdRoute = LocationIdRouteImport.update({
+  id: '/location/$id',
+  path: '/location/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/a-propos': typeof AProposRoute
+  '/conseils': typeof ConseilsRoute
+  '/contact': typeof ContactRoute
+  '/ou-louer': typeof OuLouerRoute
+  '/location/$id': typeof LocationIdRoute
+  '/location/': typeof LocationIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/a-propos': typeof AProposRoute
+  '/conseils': typeof ConseilsRoute
+  '/contact': typeof ContactRoute
+  '/ou-louer': typeof OuLouerRoute
+  '/location/$id': typeof LocationIdRoute
+  '/location': typeof LocationIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/a-propos': typeof AProposRoute
+  '/conseils': typeof ConseilsRoute
+  '/contact': typeof ContactRoute
+  '/ou-louer': typeof OuLouerRoute
+  '/location/$id': typeof LocationIdRoute
+  '/location/': typeof LocationIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/a-propos'
+    | '/conseils'
+    | '/contact'
+    | '/ou-louer'
+    | '/location/$id'
+    | '/location/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/a-propos'
+    | '/conseils'
+    | '/contact'
+    | '/ou-louer'
+    | '/location/$id'
+    | '/location'
+  id:
+    | '__root__'
+    | '/'
+    | '/a-propos'
+    | '/conseils'
+    | '/contact'
+    | '/ou-louer'
+    | '/location/$id'
+    | '/location/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AProposRoute: typeof AProposRoute
+  ConseilsRoute: typeof ConseilsRoute
+  ContactRoute: typeof ContactRoute
+  OuLouerRoute: typeof OuLouerRoute
+  LocationIdRoute: typeof LocationIdRoute
+  LocationIndexRoute: typeof LocationIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +130,59 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/a-propos': {
+      id: '/a-propos'
+      path: '/a-propos'
+      fullPath: '/a-propos'
+      preLoaderRoute: typeof AProposRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/conseils': {
+      id: '/conseils'
+      path: '/conseils'
+      fullPath: '/conseils'
+      preLoaderRoute: typeof ConseilsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ou-louer': {
+      id: '/ou-louer'
+      path: '/ou-louer'
+      fullPath: '/ou-louer'
+      preLoaderRoute: typeof OuLouerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/location/': {
+      id: '/location/'
+      path: '/location'
+      fullPath: '/location/'
+      preLoaderRoute: typeof LocationIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/location/$id': {
+      id: '/location/$id'
+      path: '/location/$id'
+      fullPath: '/location/$id'
+      preLoaderRoute: typeof LocationIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AProposRoute: AProposRoute,
+  ConseilsRoute: ConseilsRoute,
+  ContactRoute: ContactRoute,
+  OuLouerRoute: OuLouerRoute,
+  LocationIdRoute: LocationIdRoute,
+  LocationIndexRoute: LocationIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
