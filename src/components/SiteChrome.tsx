@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
-import { Menu, X, Waves } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import mark from "@/assets/surf-trotter-mark.png.asset.json";
 
 const nav = [
   { to: "/", label: "Accueil" },
@@ -16,8 +17,8 @@ export function Header() {
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-background/95 backdrop-blur">
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3">
-        <Link to="/" className="flex items-center gap-2 font-display text-2xl text-ocean">
-          <Waves className="h-7 w-7 text-secondary" /> Surf Trotter
+        <Link to="/" className="flex items-center gap-2 font-display text-xl font-black uppercase tracking-tight text-ocean">
+          <img src={mark.url} alt="" width={44} height={44} className="h-11 w-11 object-contain" /> Surf Trotter
         </Link>
         <nav className="hidden items-center gap-5 lg:flex">
           {nav.map((n) => (
@@ -26,8 +27,8 @@ export function Header() {
             </Link>
           ))}
         </nav>
-        <Link to="/location" className="hidden rounded-full bg-primary px-5 py-2 text-sm font-semibold text-primary-foreground shadow hover:opacity-90 lg:inline-flex">
-          Trouver ma planche
+        <Link to="/location" className="hidden rounded-full bg-ocean px-5 py-2 text-sm font-semibold text-ocean-foreground hover:bg-primary lg:inline-flex">
+          Choper une board
         </Link>
         <button className="lg:hidden text-ocean" onClick={() => setOpen(!open)} aria-label="Menu">
           {open ? <X /> : <Menu />}
@@ -38,7 +39,7 @@ export function Header() {
           {nav.map((n) => (
             <Link key={n.to} to={n.to} onClick={() => setOpen(false)} className="font-medium text-ocean">{n.label}</Link>
           ))}
-          <Link to="/location" onClick={() => setOpen(false)} className="rounded-full bg-primary px-5 py-2 text-center font-semibold text-primary-foreground">Trouver ma planche</Link>
+          <Link to="/location" onClick={() => setOpen(false)} className="rounded-full bg-primary px-5 py-2 text-center font-semibold text-primary-foreground">Choper une board</Link>
         </nav>
       )}
     </header>
@@ -60,8 +61,8 @@ export function Footer() {
       <div className="bg-ocean text-ocean-foreground">
         <div className="mx-auto grid max-w-7xl gap-8 px-4 py-12 md:grid-cols-4">
           <div>
-            <p className="font-display text-3xl">Surf Trotter</p>
-            <p className="mt-2 text-sm opacity-80">La marketplace de location de matériel de surf des Landes et du Pays basque.</p>
+            <p className="font-display text-2xl font-black uppercase">Surf Trotter</p>
+            <p className="mt-2 text-sm opacity-80">Des boards de shops locaux, des Landes au Pays basque. Paddle, take-off, et c'est parti.</p>
           </div>
           <div className="text-sm space-y-2">
             <p className="font-semibold">Explorer</p>
@@ -77,7 +78,7 @@ export function Footer() {
             <Link to="/contact" className="block opacity-80 hover:opacity-100">Devenir partenaire — Espace Pro</Link>
           </div>
         </div>
-        <p className="pb-6 text-center text-xs opacity-60">© 2026 Surf Trotter — Fait avec amour sur la côte atlantique</p>
+        <p className="pb-6 text-center text-xs opacity-60">© 2026 Surf Trotter — Shapé avec amour entre deux sessions, côte basque & landaise</p>
       </div>
     </footer>
   );
@@ -85,10 +86,10 @@ export function Footer() {
 
 export function PageHero({ title, subtitle }: { title: string; subtitle: string }) {
   return (
-    <section className="bg-accent/50">
+    <section className="bg-ocean">
       <div className="mx-auto max-w-4xl px-4 py-16 text-center">
-        <h1 className="text-4xl md:text-6xl">{title}</h1>
-        <p className="mt-4 text-lg text-muted-foreground">{subtitle}</p>
+        <h1 className="text-4xl text-ocean-foreground md:text-6xl">{title}</h1>
+        <p className="mt-4 text-lg text-ocean-foreground/75">{subtitle}</p>
       </div>
       <WaveDivider className="text-background" />
     </section>
