@@ -28,7 +28,7 @@ function Contact() {
   };
   return (
     <>
-      <PageHero title="Contact & Espace Pro" subtitle="Une question sur ta réservation ? Tu es un surfshop ? Écris-nous." />
+      <PageHero title="Contact & Espace Pro" subtitle="Un souci avec ta résa ? Tu tiens un shop et tu veux rejoindre la crew ? Balance-nous un message, on répond vite." />
       <div className="mx-auto max-w-5xl px-4">
         <div className="mx-auto flex w-fit gap-2 rounded-full bg-card p-1">
           {([["contact", "Nous contacter"], ["pro", "Espace Pro surfshops"]] as const).map(([k, l]) => (
@@ -39,7 +39,7 @@ function Contact() {
           <div className="mt-8 grid gap-4 md:grid-cols-3">
             {[[Store, "Visibilité", "Ton shop présenté aux surfeurs de passage."], [CalendarCheck, "Réservations", "Matériel bloqué par acompte, voucher QR au retrait."], [TrendingUp, "Revenus", "Optimise l'utilisation de ton parc de location."]].map(([I, t, d]) => {
               const Icon = I as typeof Store;
-              return <div key={t as string} className="rounded-3xl bg-secondary p-6 text-secondary-foreground"><Icon /><p className="mt-2 font-display text-2xl">{t as string}</p><p className="text-sm opacity-90">{d as string}</p></div>;
+              return <div key={t as string} className="rounded-2xl bg-ocean p-6 text-ocean-foreground"><Icon /><p className="mt-2 font-display text-2xl">{t as string}</p><p className="text-sm opacity-90">{d as string}</p></div>;
             })}
           </div>
         )}

@@ -51,7 +51,7 @@ function Catalog() {
 
   return (
     <>
-      <PageHero title="Location de matériel de surf : planches, combinaisons et accessoires" subtitle="Débutant ou confirmé, trouve l'équipement adapté à ton niveau et à ta pratique, chez les surfshops locaux." />
+      <PageHero title="Le quiver est à toi" subtitle="Mousse pour tes premiers take-off, evo pour progresser ou shortboard pour envoyer : choisis ta board chez un shop du coin." />
       <div className="mx-auto grid max-w-7xl gap-8 px-4 lg:grid-cols-[280px_1fr]">
         <aside className="h-fit space-y-4 rounded-3xl bg-card p-5 shadow-sm lg:sticky lg:top-24">
           <h2 className="text-2xl">Filtres</h2>
