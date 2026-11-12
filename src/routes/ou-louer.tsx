@@ -21,7 +21,7 @@ export const Route = createFileRoute("/ou-louer")({
 function Where() {
   return (
     <>
-      <PageHero title="Où louer ?" subtitle="Des Landes au Pays basque, nos surfshops partenaires t'attendent au plus près des vagues." />
+      <PageHero title="Où louer ?" subtitle="De Biscarrosse à Saint-Jean-de-Luz, les shops qu'on kiffe, tenus par des locaux qui connaissent chaque banc de sable." />
       {(["Landes", "Pays basque"] as const).map((region) => (
         <section key={region} className="mx-auto max-w-7xl px-4 py-8">
           <h2 className="text-4xl">{region}</h2>

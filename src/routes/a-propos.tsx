@@ -19,7 +19,7 @@ export const Route = createFileRoute("/a-propos")({
 function About() {
   return (
     <>
-      <PageHero title="À propos" subtitle="Née sur la côte atlantique, Surf Trotter relie les surfeurs aux surfshops passionnés." />
+      <PageHero title="À propos" subtitle="Une bande de potes, des vans pleins de sable et une idée simple : que personne ne rate une session faute de board." />
       <section className="mx-auto grid max-w-6xl items-center gap-10 px-4 md:grid-cols-2">
         <img src={boards} alt="Planches vintage devant un surfshop" loading="lazy" width={600} height={600} className="rounded-[2rem] shadow-lg" />
         <div className="space-y-4 text-ocean">

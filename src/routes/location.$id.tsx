@@ -119,7 +119,7 @@ function Booking() {
               <h2 className="text-4xl">C'est réservé ! 🤙</h2>
               <p className="mt-2 text-muted-foreground">Présente ce voucher au shop pour retirer ton matériel.</p>
               <div className="mx-auto mt-6 max-w-sm rounded-3xl border-2 border-dashed border-primary bg-background p-6">
-                <p className="font-display text-2xl text-ocean">Surf Trotter</p>
+                <p className="font-display text-2xl font-black uppercase text-ocean">Surf Trotter</p>
                 <div className="mx-auto mt-4 w-fit rounded-xl bg-card p-3"><QRCodeSVG value={`SURFTROTTER|${ref}|${p.id}|${start}|${end}|${qty}`} size={170} /></div>
                 <p className="mt-3 font-mono text-lg font-bold text-ocean">{ref}</p>
                 <div className="mt-4 space-y-1 text-left text-sm text-ocean">
