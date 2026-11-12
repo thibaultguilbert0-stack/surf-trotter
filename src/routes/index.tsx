@@ -1,7 +1,7 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useState } from "react";
 import { toast } from "sonner";
-import { Star, MapPinned, Store, Search, ScanLine, ShieldCheck, Users, LayoutGrid, CreditCard } from "lucide-react";
+import { Star, MapPinned, Store, Search, ScanLine, Users, LayoutGrid, CreditCard } from "lucide-react";
 import hero from "@/assets/hero.jpg";
 import shop from "@/assets/shop.jpg";
 import boards from "@/assets/boards.jpg";
