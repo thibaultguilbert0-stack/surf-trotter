@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import mark from "@/assets/surf-trotter-mark.png.asset.json";
+import wordmark from "@/assets/surf-trotter-logo-marker.png.asset.json";
 
 const nav = [
   { to: "/", label: "Accueil" },
@@ -17,8 +18,9 @@ export function Header() {
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-background/95 backdrop-blur">
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3">
-        <Link to="/" className="flex items-center gap-2 font-display text-xl font-black uppercase tracking-tight text-ocean">
-          <img src={mark.url} alt="" width={44} height={44} className="h-11 w-11 object-contain" /> Surf Trotter
+        <Link to="/" className="flex items-center gap-2">
+          <img src={mark.url} alt="" width={44} height={44} className="h-11 w-11 object-contain" />
+          <img src={wordmark.url} alt="Surf Trotter" width={985} height={241} className="h-7 w-auto object-contain" />
         </Link>
         <nav className="hidden items-center gap-5 lg:flex">
           {nav.map((n) => (
@@ -61,7 +63,7 @@ export function Footer() {
       <div className="bg-ocean text-ocean-foreground">
         <div className="mx-auto grid max-w-7xl gap-8 px-4 py-12 md:grid-cols-4">
           <div>
-            <p className="font-display text-2xl font-black uppercase">Surf Trotter</p>
+            <img src={wordmark.url} alt="Surf Trotter" width={985} height={241} className="h-9 w-auto object-contain brightness-0 invert" />
             <p className="mt-2 text-sm opacity-80">Des boards de shops locaux, des Landes au Pays basque. Paddle, take-off, et c'est parti.</p>
           </div>
           <div className="text-sm space-y-2">
