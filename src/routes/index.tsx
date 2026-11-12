@@ -110,7 +110,7 @@ function Home() {
           <h2 className="text-center text-4xl text-ocean-foreground">Pourquoi on fait ça</h2>
           <div className="mt-10 grid gap-6 md:grid-cols-4">
             {["Une board taillée pour ton niveau", "Des shops tenus par des locaux", "Tout le line-up au même endroit", "Paiement sécurisé, acompte possible"].map((t, i) => {
-              const I = [Users, Store, LayoutGrid, CreditCard][i];
+              const I = [Users, Store, LayoutGrid, CreditCard][i] ?? Users;
               return <div key={t} className="rounded-2xl border border-ocean-foreground/15 p-6 font-semibold"><I className="mb-3 h-6 w-6 text-accent" strokeWidth={1.75} />{t}</div>;
             })}
           </div>
